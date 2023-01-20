@@ -2,6 +2,7 @@ version: '3.1'
 services:
   sonarqube:
     image: sonarqube:8.6.1-community
+    container_name: lab-sonarlocal
     expose:
       - 9000
     ports:
@@ -9,3 +10,14 @@ services:
     volumes:
       - ./sonarqube-community-branch-plugin-1.14.0.jar:/opt/sonarqube/extensions/plugins/sonarqube-community-branch-plugin-1.14.0.jar
       - ./sonarqube-community-branch-plugin-1.14.0.jar:/opt/sonarqube/lib/common/sonarqube-community-branch-plugin-1.14.0.jar
+
+  # sonarqube:
+  #   image: sonarqube:8.6.1-community
+  #   container_name: lab-sonarlocal
+  #   expose:
+  #     - 9000
+  #   ports:
+  #     - "127.0.0.1:9000:9000"
+  #   volumes:
+  #     - ./sonarqube-community-branch-plugin-1.6.0.jar:/opt/sonarqube/extensions/plugins/sonarqube-community-branch-plugin-1.6.0.jar
+  #     - ./sonarqube-community-branch-plugin-1.6.0.jar:/opt/sonarqube/lib/common/sonarqube-community-branch-plugin-1.6.0.jar
